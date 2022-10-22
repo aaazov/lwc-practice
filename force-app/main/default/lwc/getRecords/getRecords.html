@@ -1,6 +1,7 @@
 <template>
     <lightning-card title="Selected Records">
         <template if:true={selectedRecordIds}>
+<<<<<<< HEAD
             <template for:each={records.data} for:item="record" >
                 <ul key={record.Id}>
                     <li>
@@ -9,6 +10,20 @@
                     </li>
                 </ul>
             </template>
+=======
+            <template for:each={selectedRecordIds} for:item="selectedRecordId" >
+                <div key={selectedRecordId}>
+                   <lightning-record-form
+                    object-api-name="Contact"
+                    record-id={selectedRecordId}
+                    layout-type="Compact"
+                    mode="view">
+                    </lightning-record-form>
+                    <br/>
+                    <br/>
+                </div>
+            </template> 
+>>>>>>> 2be90c1 (use lightning-record-form to query records)
         </template>
     </lightning-card>   
 </template>
