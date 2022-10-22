@@ -1,18 +1,14 @@
 <template>
     <lightning-card title="Selected Records">
         <template if:true={selectedRecordIds}>
-            <template for:each={selectedRecordIds} for:item="selectedRecordId" >
-                <div key={selectedRecordId}>
-                   <lightning-record-form
-                    object-api-name="Contact"
-                    record-id={selectedRecordId}
-                    layout-type="Compact"
-                    mode="view">
-                    </lightning-record-form>
-                    <br/>
-                    <br/>
-                </div>
-            </template> 
+            <template for:each={records.data} for:item="record" >
+                <ul key={record.Id}>
+                    <li>
+                        {record.Name}
+                        </br>
+                    </li>
+                </ul>
+            </template>
         </template>
     </lightning-card>   
 </template>
